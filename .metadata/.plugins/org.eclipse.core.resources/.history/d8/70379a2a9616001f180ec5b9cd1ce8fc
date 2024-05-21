@@ -1,0 +1,9 @@
+package DAO;
+
+public class stuDAO {
+
+	public stuDAO() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

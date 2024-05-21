@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<%@include file="user-header.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="page-section mb-60">
+		<div class="container">
+			<div class="row">
+
+				<div class="col-sm-10 col-md-10 col-lg-10 col-xs-10">
+					<form action="UserController" method="post">
+
+						<div class="login-form">
+							<%
+							String msg1 = (String) request.getAttribute("msg1");
+							%>
+							<h4 class="login-title">Verify OTP</h4>
+							<%
+							if (msg1 != null) {
+							%>
+							<h6>
+								<%
+								out.print(msg1);
+								%>
+							</h6>
+							<%
+							}
+							%>
+							<div class="row">
+
+								<%
+								String email = (String) request.getAttribute("email");
+								%>
+								<%
+								int otp = (Integer) (request.getAttribute("otp"));
+								%>
+								<div class="col-md-8 mb-20">
+									<input type="hidden" name="email" value="<%=email%>"> <input
+										type="hidden" name="otp1" value="<%=otp%>">
+								</div>
+								<div class="col-md-8 mb-20">
+									<input class="form-control valid" name="otp2" id="name"
+										type="text" placeholder="Enter your OTP">
+								</div>
+								<div class="col-12">
+									<button class=" btn btn-primary mt-0" name="action"
+										value="verifyotp">Verify</button>
+
+								</div>
+							</div>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

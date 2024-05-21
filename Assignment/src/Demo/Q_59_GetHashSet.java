@@ -1,0 +1,31 @@
+/*• Write a Java program to get the number of elements in a hash set.*/
+package Demo;
+
+import java.util.HashSet;
+import java.util.Iterator;
+
+public class Q_59_GetHashSet {
+
+	public static void main(String[] args) {
+		HashSet hset = new HashSet();
+
+		hset.add("Java");
+		hset.add("PHP");
+		hset.add("SQL");
+		hset.add(6546);
+		hset.add('k');
+		hset.add(true);
+		hset.add(65.329);
+		hset.add("MYSQL");
+
+		Iterator itr = hset.iterator();
+
+		while (itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+
+		int number = hset.size();
+		System.out.println("\nThe number of elements in a hash set " + number);
+	}
+
+}

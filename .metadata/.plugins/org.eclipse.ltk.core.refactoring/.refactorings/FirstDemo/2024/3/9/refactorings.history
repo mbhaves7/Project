@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Core.AsciiValue&apos; to &apos;ConAbbreviate&apos;&#x0D;&#x0A;- Original project: &apos;FirstDemo&apos;&#x0D;&#x0A;- Original element: &apos;Core.AsciiValue&apos;&#x0D;&#x0A;- Renamed element: &apos;Core.ConAbbreviate&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;AsciiValue&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Core{AsciiValue.java[AsciiValue" matchStrategy="1" name="ConAbbreviate" qualified="false" references="true" similarDeclarations="false" stamp="1709273740017" textual="false" version="1.0"/>
+</session>

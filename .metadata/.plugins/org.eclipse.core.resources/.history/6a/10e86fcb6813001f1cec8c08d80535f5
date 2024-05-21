@@ -1,0 +1,55 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@include file="user-header.jsp"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="page-section mb-60">
+		<div class="container">
+			<h2 class="mb-4">Login Form</h2>
+			<form action="UserController" method="post">
+				<%
+				String msg = (String) request.getAttribute("msg");
+				%>
+				<%
+				if (msg != null) {
+				%>
+				<h3 align="center">
+					<%
+					out.print(msg);
+					%>
+				</h3>
+				<%
+				}
+				%>
+				<div class="col-md-10 login-form">
+				
+					<div class="form-row">
+					<div class="form-group col-md-6">
+						<label for="email">Email</label> <input type="email"
+							class="form-control" id="email" placeholder="Email"name="email" required>
+					</div></div>
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="password">Password</label> <input type="password"
+								class="form-control" id="password" placeholder="Password"
+								required>
+						</div>
+						
+					</div>
+					<br>
+					<button type="submit" class="btn btn-primary" name="action"
+						value="login">signIn</button>
+
+
+					
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

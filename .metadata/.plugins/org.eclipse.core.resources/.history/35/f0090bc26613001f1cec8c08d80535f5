@@ -1,0 +1,66 @@
+package Controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import DAO.userDAO;
+import Model.user;
+
+@WebServlet("/UserController")
+public class UserController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public UserController() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
+
+		String action = request.getParameter("action");
+		if (action.equalsIgnoreCase("register")) {
+			user u = new user();
+			u.setFirst_name(request.getParameter("first_name"));
+			u.setLast_name(request.getParameter("last_name"));
+			u.setEmail(request.getParameter("email"));
+
+			u.setContact(Long.parseLong(request.getParameter("contact")));
+			u.setAddress(request.getParameter("address"));
+			u.setGender(request.getParameter("gender"));
+			u.setStatus("pending");
+			u.setPassword(request.getParameter("newp"));
+			System.out.println(u);
+			String email = request.getParameter("email");
+			boolean flag = userDAO.checkEmail(email);
+
+			String np = request.getParameter("newp");
+			String cnp = request.getParameter("confirmnp");
+			if (flag == false) {
+				if (np.equals(cnp)) {
+					request.setAttribute("msg", "suss");
+					userDAO.userInsert(u);
+					response.sendRedirect("user-login.jsp");
+				} else {
+					request.setAttribute("msg1", "password are not same");
+					request.getRequestDispatcher("user-register.jsp").forward(request, response);
+				}
+
+			} else {
+				request.setAttribute("msg1", "Email already Register");
+				request.getRequestDispatcher("user-register.jsp").forward(request, response);
+			}
+		}
+
+	}
+
+}

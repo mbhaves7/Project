@@ -1,0 +1,9 @@
+package Model;
+
+public class stu {
+
+	public stu() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

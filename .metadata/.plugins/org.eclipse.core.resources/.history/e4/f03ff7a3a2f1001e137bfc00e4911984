@@ -1,0 +1,9 @@
+package Demo;
+
+public class RemoveArrayList {
+
+	public RemoveArrayList() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
