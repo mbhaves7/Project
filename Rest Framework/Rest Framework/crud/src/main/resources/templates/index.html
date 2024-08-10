@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>CodeJava Home</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Crud Home</h1>
+        <p>Register or Login to access the system</p>
+        <a th:href="@{/register}" class="btn btn-primary">Register</a>
+        <a th:href="@{/login}" class="btn btn-primary">Login</a>
+    </div>
+</body>
+</html>
