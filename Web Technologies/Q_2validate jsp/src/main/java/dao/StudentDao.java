@@ -15,7 +15,7 @@ public class StudentDao {
 	public static void insertStudent(StudentBean s) {
 		try {
 			Connection conn = StudentUtil.createConnection();
-			String sql = "insert into user(fname,lname,email,contact) values(?,?,?,?)";
+			String sql = "insert into student2(fname,lname,email,contact) values(?,?,?,?)";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setString(1, s.getFname());
 			pst.setString(2, s.getLname());
@@ -32,7 +32,7 @@ public class StudentDao {
 		List<StudentBean> list = new ArrayList<StudentBean>();
 		try {
 			Connection conn = StudentUtil.createConnection();
-			String sql = "select * from user";
+			String sql = "select * from student2";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			ResultSet rs = pst.executeQuery();
 			while(rs.next()) {
@@ -55,7 +55,7 @@ public class StudentDao {
 		StudentBean s = null;
 		try {
 			Connection conn = StudentUtil.createConnection();
-			String sql = "select * from user where id=?";
+			String sql = "select * from student2 where id=?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
 			ResultSet rs = pst.executeQuery();
@@ -76,7 +76,7 @@ public class StudentDao {
 	public static void UpdateData(StudentBean s) {
 		try {
 			Connection conn = StudentUtil.createConnection();
-			String sql = "update user set fname=?,lname=?,email=?,contact=? where id=?";
+			String sql = "update student2 set fname=?,lname=?,email=?,contact=? where id=?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setString(1, s.getFname());
 			pst.setString(2, s.getLname());
@@ -92,7 +92,7 @@ public class StudentDao {
 	public static void DeleteData(int id) {
 		try {
 			Connection conn = StudentUtil.createConnection();
-			String sql ="delete from user where id =?";
+			String sql ="delete from student2 where id =?";
 			PreparedStatement pst = conn.prepareStatement(sql);
 			pst.setInt(1, id);
 			pst.executeUpdate();

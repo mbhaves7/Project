@@ -8,7 +8,7 @@ public class StudentUtil {
 		Connection conn = null;
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webapp", "root", "");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/advance", "root", "");
 
 		} catch (Exception e) {
 			// TODO: handle exception

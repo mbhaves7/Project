@@ -11,8 +11,8 @@
     	try
     	{  
     		Class.forName("com.mysql.jdbc.Driver");
-    		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/webapp","root","");  
-    		PreparedStatement ps=con.prepareStatement("select * from user where email=?");  
+    		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/advance","root","");  
+    		PreparedStatement ps=con.prepareStatement("select * from student2 where email=?");  
     		ps.setString(1, name);
     		ResultSet rs=ps.executeQuery();  
       		while(rs.next()) 
