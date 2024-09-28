@@ -164,6 +164,26 @@ public class vendorController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+
+		else if (action.equalsIgnoreCase("Change Password")) {
+			int id = Integer.parseInt(request.getParameter("vid"));
+			String op = request.getParameter("op");
+			String np = request.getParameter("np");
+			String cnp = request.getParameter("cnp");
+			boolean flag = vendorDAO.checkOP(id, op);
+			if (flag == true) {
+				if (np.equals(cnp)) {
+					vendorDAO.updatePassword(id, np);
+					response.sendRedirect("vendor-index.jsp");
+				} else {
+					request.setAttribute("msg1", "np and cnp is not matched");
+					request.getRequestDispatcher("v-cp.jsp").forward(request, response);
+				}
+			} else {
+				request.setAttribute("msg", "Old password is incorrect");
+				request.getRequestDispatcher("v-cp.jsp").forward(request, response);
+			}
+		}
 	}
 
 }
