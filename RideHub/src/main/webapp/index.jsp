@@ -51,7 +51,7 @@
 							<div class="col-lg-6 mb20">
 								<h5>Pick Up Location</h5>
 								<input type="text" name="PickupLocation" onfocus="geolocate()"
-									placeholder="Enter your pickup location" id="autocomplete"
+									placeholder="Enter your pickup location " id="autocomplete"
 									autocomplete="off" class="form-control">
 
 								<div class="jls-address-preview jls-address-preview--hidden">
